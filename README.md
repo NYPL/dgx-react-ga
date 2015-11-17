@@ -5,6 +5,7 @@ How to use.
 1. Add this repo to the app `package.json` file.
 
 2. Import the file:
+    // ES6:
     import analytics from 'dgx-react-ga';
 
     let config = analytics.config,
@@ -13,6 +14,9 @@ How to use.
     // OR
 
     import {config, ga} from 'dgx-react-ga';
+
+    // ES5:
+    var analytics = require('dgx-react-ga');
 
 3. Use the exposed object:
     // Outputs the GA dev or prod code. The parameter
