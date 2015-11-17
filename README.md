@@ -5,6 +5,9 @@ How to use.
 1. Add this repo to the app `package.json` file.
 
 2. Import the file:
+
+```
+#!javascript
     // ES6:
     import analytics from 'dgx-react-ga';
 
@@ -12,13 +15,16 @@ How to use.
         ga = analytics.ga;
 
     // OR
-
     import {config, ga} from 'dgx-react-ga';
 
     // ES5:
     var analytics = require('dgx-react-ga');
+```
 
 3. Use the exposed object:
+
+```
+#!javascript
     // Outputs the GA dev or prod code. The parameter
     // passed is a boolean with the app's environment
     let gaCode = config.google.code(env.isProduction);
@@ -35,3 +41,4 @@ How to use.
     // Now you can pass in the action and label, and the
     // function will always track with 'Book Lists' as the category:
     trackLists('action', 'label');
+```
