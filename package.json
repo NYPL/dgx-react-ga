@@ -21,7 +21,7 @@
     "url": "https://github.com//issues"
   },
   "dependencies": {
-    "react-ga": "^1.1.0",
+    "react-ga": "^1.1.0"
   },
   "devDependencies": {
     "babel-core": "^5.8.30",
