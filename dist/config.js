@@ -1,16 +1,16 @@
 // Account codes for Google Analytics for different environments
-"use strict";
+'use strict';
 
 var Google = {
   // Return the Google Analytics code for the production property if
-  // is_prod is true, or the dev property if is_prod is false
-  code: function code(is_prod) {
+  // isProd is true, or the dev property if isProd is false
+  code: function code(isProd) {
     var codes = {
-      production: "UA-1420324-3",
-      dev: "UA-1420324-122"
+      production: 'UA-1420324-3',
+      dev: 'UA-1420324-122'
     };
 
-    if (is_prod) {
+    if (isProd) {
       return codes.production;
     }
     return codes.dev;

@@ -14,7 +14,7 @@ var _configJs = require('./config.js');
 
 var _configJs2 = _interopRequireDefault(_configJs);
 
-function gaUtils() {
+function GaUtils() {
   /**
    * _trackGeneralEvent(category)
    * Track a GA event.
@@ -51,7 +51,7 @@ function gaUtils() {
 }
 
 exports['default'] = {
-  ga: new gaUtils(),
+  ga: new GaUtils(),
   config: _configJs2['default']
 };
 module.exports = exports['default'];

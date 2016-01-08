@@ -1,7 +1,7 @@
 import ga from 'react-ga';
 import config from './config.js';
 
-function gaUtils() {
+function GaUtils() {
   /**
    * _trackGeneralEvent(category)
    * Track a GA event.
@@ -12,9 +12,9 @@ function gaUtils() {
    */
   this._trackGeneralEvent = (category, action, label) => {
     return ga.event({
-      category: category,
-      action: action,
-      label: label
+      category,
+      action,
+      label,
     });
   };
 
@@ -30,15 +30,15 @@ function gaUtils() {
   this._trackEvent = category => {
     return (action, label) => {
       return ga.event({
-        category: category,
-        action: action,
-        label: label
+        category,
+        action,
+        label,
       });
     };
   };
 }
 
 export default {
-  ga: new gaUtils(),
-  config: config
+  ga: new GaUtils(),
+  config,
 };
