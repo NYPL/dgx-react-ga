@@ -10,10 +10,7 @@ var Google = {
       dev: 'UA-1420324-122'
     };
 
-    if (isProd) {
-      return codes.production;
-    }
-    return codes.dev;
+    return isProd ? codes.production : codes.dev;
   }
 };
 
