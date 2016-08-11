@@ -36,6 +36,14 @@ function GaUtils() {
       });
     };
   };
+
+  this._setPublicPreviewDimension = () => {
+    return ga.ga('set', 'dimension1', 'Public Preview');
+  };
+
+  this._sendPublicPreviewDimension = () => {
+    return ga.ga('send', 'pageview');
+  };
 }
 
 export default {
