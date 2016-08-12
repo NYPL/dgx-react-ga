@@ -1,5 +1,18 @@
-import ga from 'react-ga';
-import config from './config.js';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactGa = require('react-ga');
+
+var _reactGa2 = _interopRequireDefault(_reactGa);
+
+var _config = require('./config.js');
+
+var _config2 = _interopRequireDefault(_config);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function GaUtils() {
   /**
@@ -10,11 +23,11 @@ function GaUtils() {
    * @param {action} String Action for GA event.
    * @param {label} String Label for GA event.
    */
-  this._trackGeneralEvent = (category, action, label) => {
-    return ga.event({
-      category,
-      action,
-      label
+  this._trackGeneralEvent = function (category, action, label) {
+    return _reactGa2.default.event({
+      category: category,
+      action: action,
+      label: label
     });
   };
 
@@ -26,12 +39,12 @@ function GaUtils() {
    * @returns {function} Returns a function with the category set.
    *  Then you pass in the action and the label.
    */
-  this._trackEvent = category => {
-    return (action, label) => {
-      return ga.event({
-        category,
-        action,
-        label
+  this._trackEvent = function (category) {
+    return function (action, label) {
+      return _reactGa2.default.event({
+        category: category,
+        action: action,
+        label: label
       });
     };
   };
@@ -47,10 +60,14 @@ function GaUtils() {
   * @param {dimensionValue} String
   * @returns {function} Returns a function with the dimension set.
   */
-  this.setDimension = (dimensionIndex = '', dimensionValue = '') => ga.ga('set', dimensionIndex, dimensionValue);
+  this.setDimension = function () {
+    var dimensionIndex = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
+    var dimensionValue = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
+    return _reactGa2.default.ga('set', dimensionIndex, dimensionValue);
+  };
 }
 
-export default {
+exports.default = {
   ga: new GaUtils(),
-  config
+  config: _config2.default
 };

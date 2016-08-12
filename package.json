@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "node_modules/.bin/webpack -p --config webpack.config.js",
-    "babel-build": "babel src -d dist"
+    "babel-build": "./node_modules/.bin/babel src -d dist"
   },
   "author": "Edwin Guzman <edwinguzman@nypl.org>",
   "license": "MIT",
@@ -24,9 +24,10 @@
     "react-ga": "^1.1.0"
   },
   "devDependencies": {
-    "babel-core": "^5.8.30",
     "babel-cli": "6.11.4",
+    "babel-core": "^5.8.30",
     "babel-loader": "^5.3.2",
+    "babel-preset-es2015": "^6.13.2",
     "clean-webpack-plugin": "^0.1.3",
     "webpack": "^1.12.2"
   }
