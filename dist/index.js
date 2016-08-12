@@ -1,18 +1,5 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-var _reactGa = require('react-ga');
-
-var _reactGa2 = _interopRequireDefault(_reactGa);
-
-var _configJs = require('./config.js');
-
-var _configJs2 = _interopRequireDefault(_configJs);
+import ga from 'react-ga';
+import config from './config.js';
 
 function GaUtils() {
   /**
@@ -23,11 +10,11 @@ function GaUtils() {
    * @param {action} String Action for GA event.
    * @param {label} String Label for GA event.
    */
-  this._trackGeneralEvent = function (category, action, label) {
-    return _reactGa2['default'].event({
-      category: category,
-      action: action,
-      label: label
+  this._trackGeneralEvent = (category, action, label) => {
+    return ga.event({
+      category,
+      action,
+      label
     });
   };
 
@@ -39,19 +26,33 @@ function GaUtils() {
    * @returns {function} Returns a function with the category set.
    *  Then you pass in the action and the label.
    */
-  this._trackEvent = function (category) {
-    return function (action, label) {
-      return _reactGa2['default'].event({
-        category: category,
-        action: action,
-        label: label
+  this._trackEvent = category => {
+    return (action, label) => {
+      return ga.event({
+        category,
+        action,
+        label
       });
     };
   };
+
+  /**
+  * setDimension(dimensionIndex, dimensionValue)
+  * Set the dimension for GA. Every dimension includes two arguments:
+  * the index and the value.
+  * First set the dimension in the admin of GA's dashboard
+  * so the value could be passed to it.
+  *
+  * @param {dimensionIndex} String
+  * @param {dimensionValue} String
+  * @returns {function} Returns a function with the dimension set.
+  */
+  this.setDimension = (dimensionIndex = '', dimensionValue = '') => {
+    return ga.ga('set', dimensionIndex, dimensionName);
+  };
 }
 
-exports['default'] = {
+export default {
   ga: new GaUtils(),
-  config: _configJs2['default']
+  config
 };
-module.exports = exports['default'];
