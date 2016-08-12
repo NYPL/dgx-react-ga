@@ -48,9 +48,8 @@ function GaUtils() {
    * @param {dimensionValue} String
    * @returns {function} Returns a function with the dimension set.
    */
-  this.setDimension = (dimensionIndex = '', dimensionValue = '') => {
-    return ga.ga('set', dimensionIndex, dimensionName);
-  };
+  this.setDimension = (dimensionIndex = '', dimensionValue = '') =>
+    ga.ga('set', dimensionIndex, dimensionValue);
 }
 
 export default {
