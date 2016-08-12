@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "node_modules/.bin/webpack -p --config webpack.config.js",
-    "babel-build": "babel src -d dist"
+    "babel-build": "./node_modules/.bin/babel src -d dist"
   },
   "author": "Edwin Guzman <edwinguzman@nypl.org>",
   "license": "MIT",
