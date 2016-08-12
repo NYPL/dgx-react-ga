@@ -71,3 +71,4 @@ exports.default = {
   ga: new GaUtils(),
   config: _config2.default
 };
+module.exports = exports['default'];
