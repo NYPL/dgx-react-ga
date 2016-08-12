@@ -36,8 +36,19 @@ function GaUtils() {
     };
   };
 
-  this._setPublicPreviewDimension = () => {
-    return ga.ga('set', 'dimension1', 'Public Preview');
+  /**
+  * setDimension(dimensionIndex, dimensionValue)
+  * Set the dimension for GA. Every dimension includes two arguments:
+  * the index and the value.
+  * First set the dimension in the admin of GA's dashboard
+  * so the value could be passed to it.
+  *
+  * @param {dimensionIndex} String
+  * @param {dimensionValue} String
+  * @returns {function} Returns a function with the dimension set.
+  */
+  this.setDimension = (dimensionIndex = '', dimensionValue = '') => {
+    return ga.ga('set', dimensionIndex, dimensionName);
   };
 }
 
