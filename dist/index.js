@@ -14,6 +14,8 @@ var _config2 = _interopRequireDefault(_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function GaUtils() {
   /**
    * _trackGeneralEvent(category)
@@ -63,7 +65,7 @@ function GaUtils() {
   this.setDimension = function () {
     var dimensionIndex = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
     var dimensionValue = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
-    return _reactGa2.default.ga('set', dimensionIndex, dimensionValue);
+    return _reactGa2.default.set(_defineProperty({}, dimensionIndex, dimensionValue));
   };
 }
 
