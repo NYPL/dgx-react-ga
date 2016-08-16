@@ -49,7 +49,7 @@ function GaUtils() {
    * @returns {function} Returns a function with the dimension set.
    */
   this.setDimension = (dimensionIndex = '', dimensionValue = '') =>
-    ga.ga('set', dimensionIndex, dimensionValue);
+    ga.set({ [dimensionIndex]: dimensionValue });
 }
 
 export default {
