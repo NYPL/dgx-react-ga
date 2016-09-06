@@ -3,6 +3,7 @@ var webpack = require('webpack');
 var cleanBuild = require('clean-webpack-plugin');
 
 module.exports = {
+  devtool: 'source-map',
   context: __dirname + '/src',
   entry: './index.js',
   resolve: {
@@ -15,12 +16,8 @@ module.exports = {
     library: "dgxReactGa",
   },
   externals: {
-    'react': {
-      root: 'React',
-      commonjs2: 'react',
-      commonjs: 'react',
-      amd: 'react'
-    }
+    react: 'umd react',
+    'react-dom': 'umd react-dom',
   },
   module: {
     loaders: [
@@ -29,8 +26,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          presets: ['react', 'es2015'],
           plugins: ['add-module-exports'],
+          presets: ['react', 'es2015'],
         },
       },
     ],
@@ -41,6 +38,9 @@ module.exports = {
     // Minification (Utilized in Production)
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
+      output: {
+        comments: false
+      },
       compress: {
         warnings: false,
       },
