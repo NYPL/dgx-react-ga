@@ -2,9 +2,9 @@
   "name": "dgx-react-ga",
   "version": "0.0.1",
   "description": "React GA event and config",
-  "main": "dist/index.js",
+  "main": "dist/index.min.js",
   "scripts": {
-    "build": "node_modules/.bin/webpack -p --config webpack.config.js",
+    "build": "NODE_ENV=production node_modules/.bin/webpack --config webpack.config.js",
     "babel-build": "./node_modules/.bin/babel src -d dist"
   },
   "author": "Edwin Guzman <edwinguzman@nypl.org>",
