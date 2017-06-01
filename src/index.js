@@ -18,7 +18,6 @@ function GaUtils() {
     })
   );
 
-
   /**
    * trackEvent(category)
    * Track a GA click event, wrapped in a curried function.
