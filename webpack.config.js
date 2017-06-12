@@ -12,12 +12,16 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'index.min.js',
-    libraryTarget: "umd",
-    library: "dgxReactGa",
+    libraryTarget: 'umd',
+    library: 'dgxReactGa',
   },
   externals: {
-    react: 'umd react',
-    'react-dom': 'umd react-dom',
+    'react': {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react'
+    }
   },
   module: {
     loaders: [
@@ -26,8 +30,8 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel',
         query: {
-          plugins: ['add-module-exports'],
           presets: ['react', 'es2015'],
+          plugins: ['add-module-exports']
         },
       },
     ],
@@ -43,6 +47,11 @@ module.exports = {
       },
       compress: {
         warnings: false,
+      },
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
       },
     }),
   ],
