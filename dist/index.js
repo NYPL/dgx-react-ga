@@ -67,6 +67,10 @@ function GaUtils() {
     var dimensionValue = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
     return _reactGa2.default.set(_defineProperty({}, dimensionIndex, dimensionValue));
   };
+
+  this.trackPageview = function (url) {
+    return _reactGa2.default.pageview(url);
+  };
 }
 
 exports.default = {
