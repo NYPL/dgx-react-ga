@@ -56,6 +56,7 @@ function GaUtils() {
 }
 
 export default {
-  ga: new GaUtils(),
+  gaUtils: new GaUtils(),
   config,
+  ga,
 };

@@ -74,7 +74,8 @@ function GaUtils() {
 }
 
 exports.default = {
-  ga: new GaUtils(),
-  config: _config2.default
+  gaUtils: new GaUtils(),
+  config: _config2.default,
+  ga: _reactGa2.default
 };
 module.exports = exports['default'];
