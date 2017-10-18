@@ -10,7 +10,6 @@ function GaUtils() {
    * @param {action} String Action for GA event.
    * @param {label} String Label for GA event.
    */
-
   this.trackGeneralEvent = (category, action, label) => (
     ga.event({
       category,
