@@ -50,6 +50,9 @@ function GaUtils() {
    */
   this.setDimension = (dimensionIndex = '', dimensionValue = '') =>
     ga.set({ [dimensionIndex]: dimensionValue });
+
+  this.trackPageview = (url) =>
+    ga.pageview(url);
 }
 
 export default {
