@@ -37,7 +37,7 @@ function GaUtils() {
     };
   };
 
-   /**
+  /**
    * setDimension(dimensionIndex, dimensionValue)
    * Set the dimension for GA. Every dimension includes two arguments:
    * the index and the value.
@@ -51,6 +51,13 @@ function GaUtils() {
   this.setDimension = (dimensionIndex = '', dimensionValue = '') =>
     ga.set({ [dimensionIndex]: dimensionValue });
 
+  /**
+   * trackPageview(url)
+   * Track a GA pageview.
+   *
+   * @param {url} String
+   * @returns {function} Returns a function.
+   */
   this.trackPageview = (url) =>
     ga.pageview(url);
 }

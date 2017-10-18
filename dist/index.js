@@ -52,22 +52,29 @@ function GaUtils() {
   };
 
   /**
-  * setDimension(dimensionIndex, dimensionValue)
-  * Set the dimension for GA. Every dimension includes two arguments:
-  * the index and the value.
-  * First set the dimension in the admin of GA's dashboard
-  * so the value could be passed to it.
-  *
-  * @param {dimensionIndex} String
-  * @param {dimensionValue} String
-  * @returns {function} Returns a function with the dimension set.
-  */
+   * setDimension(dimensionIndex, dimensionValue)
+   * Set the dimension for GA. Every dimension includes two arguments:
+   * the index and the value.
+   * First set the dimension in the admin of GA's dashboard
+   * so the value could be passed to it.
+   *
+   * @param {dimensionIndex} String
+   * @param {dimensionValue} String
+   * @returns {function} Returns a function with the dimension set.
+   */
   this.setDimension = function () {
     var dimensionIndex = arguments.length <= 0 || arguments[0] === undefined ? '' : arguments[0];
     var dimensionValue = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
     return _reactGa2.default.set(_defineProperty({}, dimensionIndex, dimensionValue));
   };
 
+  /**
+   * trackPageview(url)
+   * Track a GA pageview.
+   *
+   * @param {url} String
+   * @returns {function} Returns a function.
+   */
   this.trackPageview = function (url) {
     return _reactGa2.default.pageview(url);
   };
