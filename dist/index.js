@@ -25,7 +25,7 @@ function GaUtils() {
    * @param {action} String Action for GA event.
    * @param {label} String Label for GA event.
    */
-  this._trackGeneralEvent = function (category, action, label) {
+  this.trackGeneralEvent = function (category, action, label) {
     return _reactGa2.default.event({
       category: category,
       action: action,
@@ -41,7 +41,7 @@ function GaUtils() {
    * @returns {function} Returns a function with the category set.
    *  Then you pass in the action and the label.
    */
-  this._trackEvent = function (category) {
+  this.trackEvent = function (category) {
     return function (action, label) {
       return _reactGa2.default.event({
         category: category,

@@ -10,7 +10,7 @@ function GaUtils() {
    * @param {action} String Action for GA event.
    * @param {label} String Label for GA event.
    */
-  this._trackGeneralEvent = (category, action, label) => {
+  this.trackGeneralEvent = (category, action, label) => {
     return ga.event({
       category,
       action,
@@ -27,7 +27,7 @@ function GaUtils() {
    * @returns {function} Returns a function with the category set.
    *  Then you pass in the action and the label.
    */
-  this._trackEvent = category => {
+  this.trackEvent = category => {
     return (action, label) => {
       return ga.event({
         category,
