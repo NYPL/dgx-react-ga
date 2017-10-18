@@ -10,13 +10,12 @@ function GaUtils() {
    * @param {action} String Action for GA event.
    * @param {label} String Label for GA event.
    */
-  this.trackGeneralEvent = (category, action, label) => {
-    return ga.event({
+  this.trackGeneralEvent = (category, action, label) =>
+    ga.event({
       category,
       action,
       label,
     });
-  };
 
 
   /**
@@ -27,15 +26,13 @@ function GaUtils() {
    * @returns {function} Returns a function with the category set.
    *  Then you pass in the action and the label.
    */
-  this.trackEvent = category => {
-    return (action, label) => {
-      return ga.event({
+  this.trackEvent = category =>
+    (action, label) =>
+      ga.event({
         category,
         action,
         label,
       });
-    };
-  };
 
   /**
    * setDimension(dimensionIndex, dimensionValue)
