@@ -1,24 +1,40 @@
+var path = require('path');
 var webpack = require('webpack');
 var cleanBuild = require('clean-webpack-plugin');
 
 module.exports = {
+  devtool: 'source-map',
   context: __dirname + '/src',
   entry: './index.js',
-  output: {
-    filename: 'index.min.js',
-    path: __dirname + '/dist'
-  },
   resolve: {
     extensions: ['', '.js', '.jsx']
+  },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'index.min.js',
+    libraryTarget: 'umd',
+    library: 'dgxReactGa',
+  },
+  externals: {
+    'react': {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react'
+    }
   },
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader']
-      }
-    ]
+        loader: 'babel',
+        query: {
+          presets: ['react', 'es2015'],
+          plugins: ['add-module-exports']
+        },
+      },
+    ],
   },
   plugins: [
     // Cleans the Dist folder after every build.
@@ -26,9 +42,17 @@ module.exports = {
     // Minification (Utilized in Production)
     new webpack.optimize.UglifyJsPlugin({
       minimize: true,
+      output: {
+        comments: false
+      },
       compress: {
-        warnings: false
-      }
-    })
-  ]
+        warnings: false,
+      },
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
+  ],
 }

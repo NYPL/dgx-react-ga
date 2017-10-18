@@ -3,23 +3,24 @@ import config from './config.js';
 
 function GaUtils() {
   /**
-   * _trackGeneralEvent(category)
+   * trackGeneralEvent(category)
    * Track a GA event.
    *
    * @param {category} String Category for GA event.
    * @param {action} String Action for GA event.
    * @param {label} String Label for GA event.
    */
-  this.trackGeneralEvent = (category, action, label) =>
+
+  this.trackGeneralEvent = (category, action, label) => (
     ga.event({
       category,
       action,
       label,
-    });
-
+    })
+  );
 
   /**
-   * _trackEvent(category)
+   * trackEvent(category)
    * Track a GA click event, wrapped in a curried function.
    *
    * @param {category} String Category for GA event.
@@ -27,12 +28,13 @@ function GaUtils() {
    *  Then you pass in the action and the label.
    */
   this.trackEvent = category =>
-    (action, label) =>
+    (action, label) => (
       ga.event({
         category,
         action,
         label,
-      });
+      })
+    );
 
   /**
    * setDimension(dimensionIndex, dimensionValue)
