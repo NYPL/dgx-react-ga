@@ -49,6 +49,13 @@ function GaUtils() {
   this.setDimension = (dimensionIndex = '', dimensionValue = '') =>
     ga.set({ [dimensionIndex]: dimensionValue });
 
+
+  this.setDimensions = (dimensions) => {
+    dimensions.forEach((d) => {
+      ga.set({ [d.dimensionIndex]: d.dimensionValue });
+    });
+  };
+
   /**
    * trackPageview(url)
    * Track a GA pageview.
