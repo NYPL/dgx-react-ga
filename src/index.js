@@ -50,9 +50,19 @@ function GaUtils() {
     ga.set({ [dimensionIndex]: dimensionValue });
 
 
+  /**
+   * setDimensions(dimensions)
+   * Set multiple dimensions for GA at once. Each dimension includes two arguments:
+   * the index and the value.
+   * This function takes an array as the argument, the structure will be as such
+   * [{ index: index1, value: value1 }, { index: index2, value: value2 }, ...]
+   *
+   * @param {dimensions} Array
+   * @returns {function} Returns a function with the dimensions set.
+   */
   this.setDimensions = (dimensions) => {
     dimensions.forEach((d) => {
-      ga.set({ [d.dimensionIndex]: d.dimensionValue });
+      ga.set({ [d.index]: d.value });
     });
   };
 
