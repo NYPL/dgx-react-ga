@@ -2,8 +2,6 @@ import ga from 'react-ga';
 import config from './config.js';
 
 function GaUtils() {
-  this.ga = () => ga.ga();
-
   /**
    * trackGeneralEvent(category)
    * Track a GA event.
