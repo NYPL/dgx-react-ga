@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+### v0.2.1
+> Adding a new function `setDimensions` for setting multiple GA dimensions at once.
+
 ### v0.2.0
 > Adding a new function `trackPageview` for GA pageview tracking.
 

@@ -49,7 +49,6 @@ function GaUtils() {
   this.setDimension = (dimensionIndex = '', dimensionValue = '') =>
     ga.set({ [dimensionIndex]: dimensionValue });
 
-
   /**
    * setDimensions(dimensions)
    * Set multiple dimensions for GA at once. Each dimension includes two arguments:
