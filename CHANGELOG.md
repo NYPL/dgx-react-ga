@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-### v0.2.1
+### v0.3.0
 > Adding a new function `setDimensions` for setting multiple GA dimensions at once.
 
 ### v0.2.0
