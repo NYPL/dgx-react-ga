@@ -37,7 +37,7 @@ function GaUtils() {
 
   /**
    * setDimension(dimensionIndex, dimensionValue)
-   * Set the dimension for GA. Every dimension includes two arguments:
+   * Set the dimension for GA. Every dimension includes two properties:
    * the index and the value.
    * First set the dimension in the admin of GA's dashboard
    * so the value could be passed to it.
@@ -48,6 +48,23 @@ function GaUtils() {
    */
   this.setDimension = (dimensionIndex = '', dimensionValue = '') =>
     ga.set({ [dimensionIndex]: dimensionValue });
+
+  /**
+   * setDimensions(dimensions)
+   * Set multiple dimensions for GA at once. Each dimension includes two properties:
+   * the index and the value.
+   * This function takes an array as the argument, the structure will be as such
+   * [{ index: index1, value: value1 }, { index: index2, value: value2 }, ...]
+   *
+   * @param {dimensions} Array
+   */
+  this.setDimensions = (dimensions) => {
+    dimensions.forEach((d) => {
+      if (d.index && d.value) {
+        ga.set({ [d.index]: d.value });
+      }
+    });
+  };
 
   /**
    * trackPageview(url)
