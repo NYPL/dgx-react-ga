@@ -4,10 +4,17 @@ import config from './config.js';
 function GaUtils() {
   /**
    * initilize(id, debug = false, titleCase = false)
+   *
+   * @param {id} String GA ID.
+   * @param {gaOpts} Object Configurations for GA initialization.
    */
-  this.initilize = (id, debug = false, titleCase = false) => (
-    ga.initialize(id, { debug, titleCase } )
-  );
+  this.initialize = (id, gaOpts = { debug: true, titleCase: false }) => {
+    if (!id) {
+      return;
+    }
+
+    ga.initialize(id, gaOpts);
+  };
 
   /**
    * trackGeneralEvent(category)
