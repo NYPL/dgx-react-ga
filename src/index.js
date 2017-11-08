@@ -3,6 +3,13 @@ import config from './config.js';
 
 function GaUtils() {
   /**
+   * initilize(id, debug = false, titleCase = false)
+   */
+  this.initilize = (id, debug = false, titleCase = false) => (
+    ga.initialize(id, { debug, titleCase } )
+  );
+
+  /**
    * trackGeneralEvent(category)
    * Track a GA event.
    *
