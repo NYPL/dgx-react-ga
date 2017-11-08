@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+### v0.4.0
+> Adding a new function `initialize` for initializing a new GA account along with its configurations.
+
 ### v0.3.0
 > Adding a new function `setDimensions` for setting multiple GA dimensions at once.
 
