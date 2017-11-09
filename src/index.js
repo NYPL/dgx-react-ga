@@ -8,7 +8,7 @@ function GaUtils() {
    * @param {id} String GA ID.
    * @param {gaOpts} Object Configurations for GA initialization.
    */
-  this.initialize = (id, gaOpts = { debug: true, titleCase: false }) => {
+  this.initialize = (id, gaOpts = { debug: false, titleCase: false }) => {
     if (!id) {
       return;
     }
