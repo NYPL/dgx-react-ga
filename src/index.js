@@ -3,7 +3,7 @@ import config from './config.js';
 
 function GaUtils() {
   /**
-   * initilize(id, debug = false, titleCase = false)
+   * initilize(id, gaOpts = { debug: false, titleCase: false })
    *
    * @param {id} String GA ID.
    * @param {gaOpts} Object Configurations for GA initialization.
