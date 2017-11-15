@@ -23,12 +23,14 @@ function GaUtils() {
    * @param {category} String Category for GA event.
    * @param {action} String Action for GA event.
    * @param {label} String Label for GA event.
+   * @param {value} String Value for GA event.
    */
-  this.trackGeneralEvent = (category, action, label) => (
+  this.trackGeneralEvent = (category, action, label, value) => (
     ga.event({
       category,
       action,
       label,
+      value,
     })
   );
 
