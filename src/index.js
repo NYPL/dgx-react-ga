@@ -17,7 +17,7 @@ function GaUtils() {
   };
 
   /**
-   * trackGeneralEvent(category)
+   * trackGeneralEvent(category, action, label, value)
    * Track a GA event.
    *
    * @param {category} String Category for GA event.
