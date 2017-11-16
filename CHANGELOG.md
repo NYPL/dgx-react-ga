@@ -1,7 +1,7 @@
 ## CHANGELOG
 
 ### v0.4.1
-> Adding a new parameter `value` to the function `trackGeneralEvent` as the GA Event's `value`.
+> Adding a new parameter `value` to the function `trackGeneralEvent` and `trackEvent` as the GA Event's `value`.
 
 ### v0.4.0
 > Adding a new function `initialize` for initializing a new GA account along with its configurations.

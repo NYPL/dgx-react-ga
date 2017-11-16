@@ -43,11 +43,12 @@ function GaUtils() {
    *  Then you pass in the action and the label.
    */
   this.trackEvent = category =>
-    (action, label) => (
+    (action, label, value) => (
       ga.event({
         category,
         action,
         label,
+        value,
       })
     );
 
