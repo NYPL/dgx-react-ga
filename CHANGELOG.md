@@ -2,7 +2,9 @@
 
 ### v0.4.2
 > Updating the version of `react-ga` for its new functions.
-> Adding the dev dependencies of `react` and `react-dom` for the new version of
+> Adding the dev dependencies of `react` and `prop-types` for the new version of
+`react-ga`.
+> Adding the dependency of `create-react-class` for the new version of
 `react-ga`.
 
 ### v0.4.1
