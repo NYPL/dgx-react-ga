@@ -20,8 +20,7 @@
     "url": "https://github.com//issues"
   },
   "dependencies": {
-    "react-ga": "2.3.5",
-    "create-react-class": "15.5.3"
+    "react-ga": "2.3.5"
   },
   "devDependencies": {
     "babel-core": "6.7.2",
