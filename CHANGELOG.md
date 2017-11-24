@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+### v0.4.2
+> Updating the version of `react-ga` for its new functions.
+
 ### v0.4.1
 > Adding a new parameter `value` to the functions `trackGeneralEvent` and `trackEvent` as the GA Event's `value`.
 
