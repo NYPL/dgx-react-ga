@@ -2,6 +2,8 @@
 
 ### v0.4.2
 > Updating the version of `react-ga` for its new functions.
+> Adding the dev denpendencies of `react` and `react-dom` for the new version of
+`react-ga`.
 
 ### v0.4.1
 > Adding a new parameter `value` to the functions `trackGeneralEvent` and `trackEvent` as the GA Event's `value`.
