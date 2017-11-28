@@ -33,12 +33,12 @@ How to use.
      * Expose the GA event functions
      */
     // Track a general event:
-    ga._trackGeneralEvent('category', 'action', 'label');
+    ga._trackGeneralEvent('category', 'action', 'label', 'value');
 
     // Or create a function with a specific category:
     let trackLists = ga._trackEvent('Book Lists');
 
     // Now you can pass in the action and label, and the
     // function will always track with 'Book Lists' as the category:
-    trackLists('action', 'label');
+    trackLists('action', 'label', 'value');
 ```
