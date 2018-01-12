@@ -1,5 +1,8 @@
 ## CHANGELOG
 
+### v0.4.3
+> Updating `react-ga` to v2.4.1.
+
 ### v0.4.2
 > Updating the version of `react-ga` for its new functions. The function ga.event() now can handle custom dimensions as a parameter.
 > Adding the dev dependencies of `react` and `prop-types` for the new version of
