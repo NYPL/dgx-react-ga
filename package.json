@@ -1,6 +1,6 @@
 {
   "name": "dgx-react-ga",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React GA event and config",
   "main": "dist/index.min.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "url": "https://github.com//issues"
   },
   "dependencies": {
-    "react-ga": "2.2.0"
+    "react-ga": "2.4.1"
   },
   "devDependencies": {
     "babel-core": "6.7.2",
