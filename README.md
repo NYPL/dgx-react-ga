@@ -1,6 +1,6 @@
-React Analytics
+## React Analytics
 
-How to use.
+### Usage
 
 1. Add this repo to the app `package.json` file.
 
@@ -42,3 +42,12 @@ How to use.
     // function will always track with 'Book Lists' as the category:
     trackLists('action', 'label', 'value');
 ```
+
+### Contributing to this repo
+* Create a feature branch from `development`
+* From the command line rebuild the `/dist` directory with `npm run build`.
+* Add & commit the new `/dist` folder and make the pull request
+  with `development` as the base.
+* Changes must be approved by a peer reviewer
+* Merge changes upon approval
+* Merge `development` into `master`
