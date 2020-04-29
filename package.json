@@ -17,7 +17,7 @@
     "boilerplate"
   ],
   "bugs": {
-    "url": "https://github.com//issues"
+    "url": "https://github.com/NYPL/dgx-react-ga/issues"
   },
   "dependencies": {
     "react-ga": "2.7.0",
