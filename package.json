@@ -1,6 +1,6 @@
 {
   "name": "dgx-react-ga",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "React GA event and config",
   "main": "dist/index.min.js",
   "scripts": {

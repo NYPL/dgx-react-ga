@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+### v0.4.4
+> Updated packages to fix vulnerabilities.
+> Webpack upgraded to v4
+> Babel upgraded to v7.9
+> Converted to preset-env; replaces es2015
+> Adds TerserWebpackPlugin; replaces UglifyJS
+
 ### v0.4.3
 > Updating `react-ga` to v2.4.1.
 
