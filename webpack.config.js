@@ -1,19 +1,20 @@
-var path = require('path');
-var webpack = require('webpack');
-var cleanBuild = require('clean-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
-  context: __dirname + '/src',
-  entry: './index.js',
+  entry: path.resolve(__dirname, 'src/index.js'),
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx']
   },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'index.min.js',
     libraryTarget: 'umd',
     library: 'dgxReactGa',
+    globalObject: 'this',
   },
   externals: {
     'react': {
@@ -23,32 +24,34 @@ module.exports = {
       amd: 'react'
     }
   },
+  // Minification (Utilized in Production)
+  optimization: {
+    minimizer: [
+      new TerserWebpackPlugin({
+        terserOptions: {
+          warnings: false,
+        },
+      }),
+    ],
+  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'es2015'],
-          plugins: ['add-module-exports']
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            '@babel/preset-env',
+            '@babel/preset-react'
+          ]
         },
       },
     ],
   },
   plugins: [
     // Cleans the Dist folder after every build.
-    new cleanBuild(['dist']),
-    // Minification (Utilized in Production)
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      output: {
-        comments: false
-      },
-      compress: {
-        warnings: false,
-      },
-    }),
+    new CleanWebpackPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
