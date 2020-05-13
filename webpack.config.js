@@ -14,7 +14,7 @@ module.exports = {
     filename: 'index.min.js',
     libraryTarget: 'umd',
     library: 'dgxReactGa',
-    globalObject: "window",
+    globalObject: "this",
   },
   externals: {
     'react': {
