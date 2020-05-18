@@ -12,6 +12,6 @@ const Google = {
   },
 };
 
-module.exports = {
-  google: Google,
-};
+export default {
+  google: Google
+}
