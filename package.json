@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/NYPL/dgx-react-ga.git"
+    "url": "git+https://github.com/NYPL/dgx-react-ga.git"
   },
   "keywords": [
     "webpack",
